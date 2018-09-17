@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  height: -webkit-fill-available;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333333;
 }
 
 .App-logo {
@@ -21,8 +25,10 @@
 .App-intro {
   font-size: large;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+div.console-typing{
+  color:lightgreen;
+  background: #333333;
+}
+div.console-typing >a {
+  color: inherit;
 }
