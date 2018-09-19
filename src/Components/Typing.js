@@ -6,7 +6,9 @@ export default class TypingInput extends Component {
   constructor() {
     super()
     this.state = {
-      arrInput: [...textComponent.inputs]
+      arrInput: [...textComponent.inputs],
+      loadingPage: true,
+      emptyInput: true
     }
   }
 
@@ -15,17 +17,25 @@ export default class TypingInput extends Component {
       return (
         <Typing className="console-typing" loop={true} speed={35} onFinishedTyping={() => {
           const arrInput = [...this.state.arrInput]
-          this.props.submitMessage(arrInput.shift())
+          if (arrInput.length) {
+            this.props.submitMessage(arrInput.shift())
+          } else {
+            this.setState({ loadingPage: false })
+          }
           this.setState({ arrInput })
         }}>
           {this.state.arrInput[0]}
-          <Delay ms={1500} />
+          <Delay ms={1000} />
           <Reset count={1} />
         </Typing >
       )
     } else {
       return (
-        <div className="blinking-cursor">|</div>)
+        <div id="user-Input" >
+          <div id="input-Field" />
+          <div className="blinking-cursor">|</div>
+        </div>
+      )
     }
   }
 }

@@ -60,8 +60,7 @@ div#console-display div{
   color: inherit;
 }
 div#console-input{
-  padding: 10px;
-  height: 45px;
+  height: 32px;
   
 }
 div.console-typing{
@@ -75,13 +74,20 @@ div.console-typing{
 div.console-typing >div {
   color: inherit;
 }
-div#userInput{
+div#user-Input{
   display:flex;
+  color:white;
+}
+div#input-Field{
+  padding-top: 5px;
+  padding-left: 5px;
+  
+  color:inherit;
 }
 .blinking-cursor {
-  font-weight: inherit;
-  font-size: x-large;
-  color: white;
+  /* font-weight: inherit; */
+  padding-top:5px;
+  font-size: large;
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
   -ms-animation: 1s blink step-end infinite;
@@ -94,7 +100,7 @@ div#userInput{
     color: transparent;
   }
   50% {
-    color: lightgreen;
+    color: inherit;
   }
 }
 
@@ -103,7 +109,7 @@ div#userInput{
     color: transparent;
   }
   50% {
-    color: lightGreen;
+    color: inherit;
   }
 }
 
@@ -112,7 +118,7 @@ div#userInput{
     color: transparent;
   }
   50% {
-    color: lightgreen;
+    color: inherit;
   }
 }
 
@@ -121,7 +127,7 @@ div#userInput{
     color: transparent;
   }
   50% {
-    color: lightgreen;
+    color: inherit;
   }
 }
 
@@ -130,7 +136,7 @@ div#userInput{
     color: transparent;
   }
   50% {
-    color: lightgreen;
+    color: inherit;
   }
 }
 .hideMe {
@@ -144,6 +150,7 @@ div#userInput{
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+
 @keyframes cssAnimation {
   to {
       width:0;
