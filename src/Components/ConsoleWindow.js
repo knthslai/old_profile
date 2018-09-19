@@ -1,44 +1,23 @@
 import React, { Component } from 'react';
-import Typing from 'react-typing-animation'
-import { Input, Button } from 'semantic-ui-react'
-import textComponent from "./TextComponents"
+import { Icon } from 'semantic-ui-react'
+import TypingInput from './Typing';
 
 class ConsoleWindow extends Component {
-  constructor() {
-    super()
-    this.state = {
-      currInput: ``
-    }
-  }
-  // handleChange = (e) => {
-  //   this.setState({ currInput: e.target.value })
-  // }
-  handleSubmit = (e) => {
-    const consRef = document.getElementsByClassName("console-typing")
-    const aRef = document.createElement("a");
-    const inputTxt = document.createTextNode(document.getElementById("consoleInputVal").value);
-    aRef.appendChild(inputTxt);
-    consRef[0].appendChild(aRef)
+  submitMessage = (str) => {
+    const newStr = document.createElement(`div`)
+    newStr.appendChild(document.createTextNode(`> ${str}`))
+    newStr.classList.add(`hideMe`)
+    document.getElementById(`console-display`).appendChild(newStr)
   }
   render() {
-    const initInputs = [...textComponent.inputs]
     return (
       <div id="console-window">
-        <Typing className="console-typing" speed={35}>
-          {` `}
-          <Typing.Delay ms={1500} />
-          {
-            initInputs.map((str, idx) => {
-              return (
-                <a key={str + idx}>
-                  {str}<br />
-                  <Typing.Delay ms={1000} />
-                </a>)
-            })
-          }
-          <Typing.Delay ms={10000 * 10000} />
-        </Typing>
-      </div>
+        <div id="console-header"><h3> Kenneth Lai - </h3><a>Web Developer</a><Icon name="window close outline" size="large" /></div>
+        <div id="console-display"></div>
+        <div id="console-input">
+          <TypingInput submitMessage={this.submitMessage} />
+        </div>
+      </div >
     )
   }
 }
