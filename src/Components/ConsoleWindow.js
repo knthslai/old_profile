@@ -103,7 +103,7 @@ class ConsoleWindow extends Component {
     this.addTypingEventListener(submitMessage)
     return (
       <div id="console-window">
-        <div id="console-header"><h3> Kenneth Lai - </h3><a>Web Developer</a><Icon name="window close outline" size="large" /></div>
+        <div id="console-header"><h3> Kenneth Lai - Web Developer</h3><Icon name="window close outline" size="large" /></div>
         <div id="console-display" />
         <div id="console-input">
           <TypingInput secretNum={this.state.secretNum} submitMessage={submitMessage} />

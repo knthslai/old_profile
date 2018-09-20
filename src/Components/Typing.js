@@ -14,7 +14,7 @@ export default class TypingInput extends Component {
   render() {
     if (this.state.loading) {
       return (
-        <Typing className="console-typing" loop={true} speed={35} startDelay={2000} onFinishedTyping={() => {
+        <Typing className="console-typing" loop={true} speed={35} startDelay={1250} onFinishedTyping={() => {
           const arrInput = [...this.state.arrInput]
           const lengthInput = this.state.arrInput.length
           if (lengthInput > 1) {

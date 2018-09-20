@@ -1,3 +1,7 @@
+body{
+  background-color:black;
+}
+
 .App {
   height: stretch;
   display: flex;
@@ -41,7 +45,11 @@ div#console-window{
 
 div#console-header>*{
   color: white;
-  display:contents;
+  display: flex;
+  align-self: center;
+}
+div#console-header h3{
+  margin:0px;
 }
 div#console-header{
   display:flex;
@@ -211,7 +219,7 @@ div#info-Container{
   img#bg-gif{
     position: absolute;
     top:-100%;
-    right:-105%;
+    right:-95%;
     width: auto;
     height: 100%;
     opacity: .5;
