@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <ConsoleWindow />
         <NavBar />
-        <InfoBar />
+        {/* <InfoBar /> */}
         <img id="bg-gif" src={require(`./profileBGGif.gif`)} />
       </div>
     );

@@ -42,6 +42,7 @@ class ConsoleWindow extends Component {
     let waiting = false
     const secretNum = this.state.secretNum
     return function (str) {
+      const consWin = document.getElementById(`console-window`)
       const consoleRef = document.getElementById(`console-display`)
       const newStr = document.createElement(`div`);
       let inputStr = str
@@ -65,7 +66,11 @@ class ConsoleWindow extends Component {
           document.getElementById(divName).classList.add(`slide${direction}`)
           setTimeout(() => {
             document.getElementById(str).innerText += ` Complete`
+            if (consWin) {
+              setTimeout(() => consWin.remove(), 10000)
+            }
           }, 2000)
+
         }
         newStr.style.color = `rgb(255, 255, 116)`
       }
@@ -73,7 +78,13 @@ class ConsoleWindow extends Component {
       newStr.id = str
       newStr.appendChild(document.createTextNode(`> ${inputStr}`))
       consoleRef.appendChild(newStr)
-      setTimeout(() => document.getElementById(str).remove(), 10000)
+
+      setTimeout(() => {
+        const textEntry = document.getElementById(str)
+        if (textEntry) {
+          textEntry.remove()
+        }
+      }, 10000)
 
       function addWaitingLine(time) {
         setTimeout(() => {
