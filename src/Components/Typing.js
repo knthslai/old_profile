@@ -7,25 +7,27 @@ export default class TypingInput extends Component {
     super()
     this.state = {
       arrInput: [...textComponent.inputs],
-      loadingPage: true,
-      emptyInput: true
+      loading: true
     }
   }
 
   render() {
-    if (this.state.arrInput.length) {
+    if (this.state.loading) {
       return (
-        <Typing className="console-typing" loop={true} speed={35} onFinishedTyping={() => {
+        <Typing className="console-typing" loop={true} speed={35} startDelay={2000} onFinishedTyping={() => {
           const arrInput = [...this.state.arrInput]
-          if (arrInput.length) {
+          const lengthInput = this.state.arrInput.length
+          if (lengthInput > 1) {
             this.props.submitMessage(arrInput.shift())
-          } else {
-            this.setState({ loadingPage: false })
+            this.setState({ arrInput })
+          } else if (lengthInput === 1) {
+            this.props.submitMessage(arrInput[0])
+            setTimeout(() => this.props.submitMessage(this.props.secretNum), 2500)
+            this.setState({ loading: false })
           }
-          this.setState({ arrInput })
         }}>
           {this.state.arrInput[0]}
-          <Delay ms={1000} />
+          <Delay ms={1500} />
           <Reset count={1} />
         </Typing >
       )

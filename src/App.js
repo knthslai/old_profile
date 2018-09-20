@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import ConsoleWindow from './Components/ConsoleWindow';
+import { ConsoleWindow, NavBar, InfoBar } from './Components';
 
 
 class App extends Component {
@@ -8,6 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <ConsoleWindow />
+        <NavBar />
+        <InfoBar />
+        <img id="bg-gif" src={require(`./profileBGGif.gif`)} />
       </div>
     );
   }

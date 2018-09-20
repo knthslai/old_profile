@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Icon } from 'semantic-ui-react';
 import TypingInput from './Typing';
-import Anime from 'react-anime';
 
 class ConsoleWindow extends Component {
+  constructor() {
+    super()
+    this.state = {
+      secretNum: Math.random(9) * Date.now(),
+    }
+  }
 
   addTypingEventListener(submitMessage) {
     document.addEventListener(`keydown`, evt => {
@@ -35,23 +40,34 @@ class ConsoleWindow extends Component {
 
   preSubmitMessage = () => {
     let waiting = false
-
+    const secretNum = this.state.secretNum
     return function (str) {
       const consoleRef = document.getElementById(`console-display`)
       const newStr = document.createElement(`div`);
       let inputStr = str
-
-      if (str === `Loading Complete`) {
-        addWaitingLine(250)
+      if (str === secretNum) {
+        inputStr = `---Loaded Successfully---`
+        newStr.style.color = `lightgreen`
+        addWaitingLine(3000)
         waiting = true
       } else {
         if (waiting) {
           document.getElementById(`waiting-Text`).remove()
           addWaitingLine(5000)
           waiting = false
+          //Loading Content
         } else if (inputStr.slice(0, 4) === `Load`) {
-          inputStr = `Loading: ${inputStr.slice(5)}`
+          const divId = inputStr.slice(5)
+          const splitIdx = divId.indexOf(`:`)
+          const divName = divId.slice(0, splitIdx)
+          const direction = divId.slice(splitIdx + 1)
+          inputStr = `Loading: ${divName} ...`
+          document.getElementById(divName).classList.add(`slide${direction}`)
+          setTimeout(() => {
+            document.getElementById(str).innerText += ` Complete`
+          }, 2000)
         }
+        newStr.style.color = `rgb(255, 255, 116)`
       }
 
       newStr.id = str
@@ -63,6 +79,7 @@ class ConsoleWindow extends Component {
         setTimeout(() => {
           const waitingStr = document.createElement(`div`);
           waitingStr.appendChild(document.createTextNode(`> Waiting for user input...`))
+          waitingStr.style.color = `lightblue`
           waitingStr.id = `waiting-Text`
           consoleRef.appendChild(waitingStr)
         }, time)
@@ -76,9 +93,9 @@ class ConsoleWindow extends Component {
     return (
       <div id="console-window">
         <div id="console-header"><h3> Kenneth Lai - </h3><a>Web Developer</a><Icon name="window close outline" size="large" /></div>
-        <div id="console-display"></div>
+        <div id="console-display" />
         <div id="console-input">
-          <TypingInput submitMessage={submitMessage} />
+          <TypingInput secretNum={this.state.secretNum} submitMessage={submitMessage} />
         </div>
       </div >
     )

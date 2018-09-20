@@ -2,8 +2,8 @@
   height: stretch;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: #333333;
+  justify-content: center;  
+  background-color:black;
 }
 
 .App-logo {
@@ -27,12 +27,18 @@
 }
 div#console-window{
   position: absolute;
-    z-index: 1;
+  z-index: 1;
   width:30%;
-  border:1px solid black;
-  box-shadow: 5px 10px #282828;
+  border:1px solid rgba(255, 255, 255, 0.42);
   border-radius: 5px;
+  background-color: #333333;
+  animation: fadein 2s 
 }
+@keyframes fadein {
+  0%   {opacity:0;}
+  100% {opacity:1;}
+}
+
 div#console-header>*{
   color: white;
   display:contents;
@@ -41,7 +47,7 @@ div#console-header{
   display:flex;
   justify-content: space-between;
   color: white;
-  background: rgb(38, 38, 38);
+  background-color: rgb(38, 38, 38);
   border-bottom: 1px solid rgb(19, 19, 19);
   padding: 5px;
   padding-right: 10px;
@@ -49,15 +55,11 @@ div#console-header{
   border-top-right-radius: 5px;
 }
 div#console-display{
-  color: lightgreen;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   padding: 5px;
   min-height: 100px;
   border-bottom: 1px solid black;
-}
-div#console-display div{
-  color: inherit;
 }
 div#console-input{
   height: 32px;
@@ -66,14 +68,12 @@ div#console-input{
 div.console-typing{
   padding: 5px;
   color:white;
-  background: #333333;
+  background-color: #333333;
   text-align: left;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-div.console-typing >div {
-  color: inherit;
-}
+
 div#user-Input{
   display:flex;
   color:white;
@@ -84,6 +84,41 @@ div#input-Field{
   
   color:inherit;
 }
+div#nav-Bar{
+  padding-top:20px;
+  background:linear-gradient(to bottom, black,transparent);
+  color:white;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  z-index: 1;
+}
+.nav-item{
+  padding-right: 37.5px;
+  padding-left: 37.5px;
+}
+img#bg-gif{
+  position: absolute;
+  top:-100%;
+  width: 100%;
+  height: auto;
+  opacity: .5;
+  z-index: 0;
+}
+div#nav-Bar *{
+  background-color:transparent;
+  color:inherit;
+}
+
+div#info-Container{
+  background-color:blue;
+  position: absolute;
+  left: -100%;
+}
+
 .blinking-cursor {
   /* font-weight: inherit; */
   padding-top:5px;
@@ -95,7 +130,7 @@ div#input-Field{
   animation: 1s blink step-end infinite;
 }
 
-@keyframes "blink" {
+@keyframes blink {
   from, to {
     color: transparent;
   }
@@ -104,7 +139,7 @@ div#input-Field{
   }
 }
 
-@-moz-keyframes blink {
+@-moz-keyframes "blink" {
   from, to {
     color: transparent;
   }
@@ -139,29 +174,31 @@ div#input-Field{
     color: inherit;
   }
 }
-.hideMe {
-  -moz-animation: cssAnimation 0s ease-in 10s forwards;
-  /* Firefox */
-  -webkit-animation: cssAnimation 0s ease-in 10s forwards;
-  /* Safari and Chrome */
-  -o-animation: cssAnimation 0s ease-in 10s forwards;
-  /* Opera */
-  animation: cssAnimation 0s ease-in 10s forwards;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+.slideLeft {
+  -webkit-animation: slideLeft 1s forwards;
+  /* -webkit-animation-delay: 2s; */
+  animation: slideLeft 1s forwards;
+  /* animation-delay: 2s; */
 }
 
-@keyframes cssAnimation {
-  to {
-      width:0;
-      height:0;
-      overflow:hidden;
-  }
+@-webkit-keyframes slideLeft {
+  100% { left: 0; }
 }
-@-webkit-keyframes cssAnimation {
-  to {
-      width:0;
-      height:0;
-      visibility:hidden;
-  }
+
+@keyframes slideLeft {
+  100% { left: 0; }
+}
+.slideTop {
+  -webkit-animation: slideTop 1s forwards;
+  /* -webkit-animation-delay: 2s; */
+  animation: slideTop 1s forwards;
+  /* animation-delay: 2s; */
+}
+
+@-webkit-keyframes slideTop {
+  100% { top: 0; }
+}
+
+@keyframes slideTop {
+  100% { top: 0; }
 }
