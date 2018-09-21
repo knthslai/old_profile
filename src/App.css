@@ -36,11 +36,14 @@ div#console-window{
   border:1px solid rgba(255, 255, 255, 0.42);
   border-radius: 5px;
   background-color: #333333;
-  animation: fadein 2s 
 }
 @keyframes fadein {
   0%   {opacity:0;}
   100% {opacity:1;}
+}
+@keyframes fadeout {
+  0%   {opacity:1;}
+  100% {opacity:0;}
 }
 
 div#console-header>*{
@@ -211,6 +214,10 @@ div#info-Container{
 
 @keyframes slideTop {
   100% { top: 0; }
+}
+
+.nav-item a{
+  color:white;
 }
 
 @media only screen and (max-width: 600px) {

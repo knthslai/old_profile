@@ -98,7 +98,9 @@ class ConsoleWindow extends Component {
           setTimeout(() => {
             document.getElementById(str).innerText += ` Complete`
             if (consWin) {
-              setTimeout(() => consWin.remove(), 10000)
+              setTimeout(() => {
+                consWin.style.animation = `fadeout 2s forwards`
+              }, 10000)
             }
           }, 2000)
 

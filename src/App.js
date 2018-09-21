@@ -13,6 +13,7 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener(`resize`, this.resize.bind(this));
     this.resize();
+    document.getElementById(`console-window`).style.animation = `fadein 2s forwards`
   }
   resize() {
     this.setState({ mobileView: window.innerWidth <= 600 });
