@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { Icon } from 'semantic-ui-react';
 export default class NavBar extends Component {
   render() {
     return (
       <div id="nav-Bar">
+        {
+          this.props.mobileView ? <Icon name="align justify" size="large" className="nav-item"><h3 style={{ paddingLeft: `10px` }}> - Menu </h3></Icon > : null
+        }
         <div id="about-Me" className="nav-item">
           <h2>About Me</h2>
           <a> How I became<br />

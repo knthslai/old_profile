@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Icon } from 'semantic-ui-react';
 import TypingInput from './Typing';
+import anime from "animejs"
+
 
 class ConsoleWindow extends Component {
   constructor() {
@@ -9,7 +11,6 @@ class ConsoleWindow extends Component {
       secretNum: Math.random(9) * Date.now(),
     }
   }
-
   addTypingEventListener(submitMessage) {
     document.addEventListener(`keydown`, evt => {
       const inputField = document.getElementById(`input-Field`)
@@ -41,6 +42,7 @@ class ConsoleWindow extends Component {
   preSubmitMessage = () => {
     let waiting = false
     const secretNum = this.state.secretNum
+    const mobileView = this.props.mobileView
     return function (str) {
       const consWin = document.getElementById(`console-window`)
       const consoleRef = document.getElementById(`console-display`)
@@ -63,7 +65,36 @@ class ConsoleWindow extends Component {
           const divName = divId.slice(0, splitIdx)
           const direction = divId.slice(splitIdx + 1)
           inputStr = `Loading: ${divName} ...`
-          document.getElementById(divName).classList.add(`slide${direction}`)
+          if (divName === `nav-Bar` && mobileView) {
+            const nodeList = document.getElementsByClassName(`nav-item`)
+            let i
+            for (i = 0; i < nodeList.length; i++) {
+              nodeList[i].classList.add(`slide${i}`)
+              nodeList[i].childNodes.forEach((node, idx) => idx ? node.remove() : null)
+            }
+            setTimeout(() => {
+              let time = 0
+              const timeline = anime.timeline({ easing: `easeOutExpo`, })
+              timeline.add({
+                targets: `.nav-item.slide0`,
+                translateX: 365,
+                duration: 3000,
+                offset: time
+              })
+              time += 1000
+              for (let j = 1; j < i; j++) {
+                timeline.add({
+                  targets: `.nav-item.slide${j}`,
+                  translateX: [{ value: 365 }, { value: 365 }],
+                  translateY: [{ value: 0 }, { value: -200 }],
+                  duration: 10000,
+                  offset: time
+                })
+                time += 1000
+              }
+            }, 1000
+            )
+          } else { document.getElementById(divName).classList.add(`slide${direction}`) }
           setTimeout(() => {
             document.getElementById(str).innerText += ` Complete`
             if (consWin) {
