@@ -10,6 +10,7 @@
     "react-dom": "^16.5.1",
     "react-scripts": "1.1.5",
     "react-typing-animation": "^1.4.0",
+    "scrollreveal": "^4.0.2",
     "semantic-ui-react": "^0.82.5"
   },
   "scripts": {

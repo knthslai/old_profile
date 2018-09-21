@@ -8,8 +8,7 @@ const currDate = new Date().toLocaleString(`en-US`, {
 })
 module.exports = {
   inputs: [
-    // `Starting terminal on: ${currDate}`,
-    // `Initiating React Components`,
+    `Starting terminal on: ${currDate}`,
     `Load bg-gif:Top`,
     `Load nav-item:Top`,
     // `Load info-Container:Left`,

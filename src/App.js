@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import { ConsoleWindow, NavBar, InfoBar } from './Components';
+import { ConsoleWindow, NavBar, Main } from './Components';
 
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      mobileView: false
+      mobileView: false,
+      mainLoad: false
     }
   }
   componentDidMount() {
@@ -18,13 +19,18 @@ class App extends Component {
   resize() {
     this.setState({ mobileView: window.innerWidth <= 600 });
   }
+  newState() {
+    this.setState({ mainLoad: true });
+  }
   render() {
     return (
       <div className="App">
-        <ConsoleWindow mobileView={this.state.mobileView} />
+        <ConsoleWindow mobileView={this.state.mobileView} newState={this.newState.bind(this)} />
         <NavBar mobileView={this.state.mobileView} />
-        {/* <InfoBar /> */}
-        <img id="bg-gif" src={require(`./profileBGGif.gif`)} />
+        {this.state.mainLoad &&
+          <Main />
+        }
+        <img alt="BGGif" id="bg-gif" src={require(`./profileBGGif.gif`)} />
       </div>
     );
   }

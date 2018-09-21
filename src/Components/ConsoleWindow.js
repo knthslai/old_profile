@@ -11,7 +11,7 @@ class ConsoleWindow extends Component {
       secretNum: Math.random(9) * Date.now(),
     }
   }
-  addTypingEventListener(submitMessage) {
+  addTypingEventListener = (submitMessage) => {
     document.addEventListener(`keydown`, evt => {
       const inputField = document.getElementById(`input-Field`)
 
@@ -40,10 +40,11 @@ class ConsoleWindow extends Component {
   }
 
   preSubmitMessage = () => {
-    let waiting = false
+    // let waiting = false
     const secretNum = this.state.secretNum
     const mobileView = this.props.mobileView
-    return function (str) {
+    const newState = this.props.newState
+    return (str) => {
       const consWin = document.getElementById(`console-window`)
       const consoleRef = document.getElementById(`console-display`)
       const newStr = document.createElement(`div`);
@@ -51,15 +52,22 @@ class ConsoleWindow extends Component {
       if (str === secretNum) {
         inputStr = `---Loaded Successfully---`
         newStr.style.color = `lightgreen`
-        addWaitingLine(3000)
-        waiting = true
+
+        setTimeout(() => {
+          newState({ mainLoad: true })
+          consWin.style.animation = `fadeout 2s forwards`
+        }, 3000)
+
+        // addWaitingLine(3000)
+        // waiting = true
       } else {
-        if (waiting) {
-          document.getElementById(`waiting-Text`).remove()
-          addWaitingLine(5000)
-          waiting = false
-          //Loading Content
-        } else if (inputStr.slice(0, 4) === `Load`) {
+        // if (waiting) {
+        //   document.getElementById(`waiting-Text`).remove()
+        //   addWaitingLine(5000)
+        //   waiting = false
+        //   //Loading Content
+        // } else 
+        if (inputStr.slice(0, 4) === `Load`) {
           const divId = inputStr.slice(5)
           const splitIdx = divId.indexOf(`:`)
           const divName = divId.slice(0, splitIdx)
@@ -97,13 +105,11 @@ class ConsoleWindow extends Component {
                   offset: time
                 }
                 if (mobileView) {
-                  timelineOptions.translateX = [{ value: 365 }, { value: 365 }],
-                    timelineOptions.translateY = [{ value: 0 }, { value: -200 }]
+                  timelineOptions.translateX = [{ value: 365 }, { value: 365 }]
+                  timelineOptions.translateY = [{ value: 0 }, { value: -200 }]
                 }
                 for (let j = startIdx; j < i; j++) {
-
                   timelineOptions.targets = `.nav-item.slide${j}`
-                  console.log(timelineOptions)
                   timeline.add(timelineOptions)
                   timelineOptions.offset += 1000
                 }
@@ -116,11 +122,6 @@ class ConsoleWindow extends Component {
           }
           setTimeout(() => {
             document.getElementById(str).innerText += ` Complete`
-            if (consWin) {
-              setTimeout(() => {
-                consWin.style.animation = `fadeout 2s forwards`
-              }, 10000)
-            }
           }, 2000)
 
         }
@@ -138,15 +139,15 @@ class ConsoleWindow extends Component {
         }
       }, 10000)
 
-      function addWaitingLine(time) {
-        setTimeout(() => {
-          const waitingStr = document.createElement(`div`);
-          waitingStr.appendChild(document.createTextNode(`> Waiting for user input...`))
-          waitingStr.style.color = `lightblue`
-          waitingStr.id = `waiting-Text`
-          consoleRef.appendChild(waitingStr)
-        }, time)
-      }
+      // function addWaitingLine(time) {
+      //   setTimeout(() => {
+      //     const waitingStr = document.createElement(`div`);
+      //     waitingStr.appendChild(document.createTextNode(`> Waiting for user input...`))
+      //     waitingStr.style.color = `lightblue`
+      //     waitingStr.id = `waiting-Text`
+      //     consoleRef.appendChild(waitingStr)
+      //   }, time)
+      // }
     }
   }
 
@@ -155,7 +156,7 @@ class ConsoleWindow extends Component {
     this.addTypingEventListener(submitMessage)
     return (
       <div id="console-window">
-        <div id="console-header"><h3> Kenneth Lai - Web Developer</h3><Icon name="window close outline" size="large" /></div>
+        <div id="console-header"><h3> Display Console </h3><Icon name="window close outline" size="large" /></div>
         <div id="console-display" />
         <div id="console-input">
           <TypingInput secretNum={this.state.secretNum} submitMessage={submitMessage} />

@@ -1,18 +1,22 @@
 body{
   background-color:black;
 }
-
+*{
+  color:white;
+}
 .App {
   height: stretch;
   display: flex;
   align-items: center;
   justify-content: center;  
   background-color:black;
+  font-family: 'Montserrat';
 }
 
 div#console-window{
   position: absolute;
   z-index: 3;
+  min-width:380px;
   width:30%;
   border:1px solid rgba(255, 255, 255, 0.42);
   border-radius: 5px;
@@ -55,7 +59,8 @@ div#console-display{
   border-bottom: 1px solid black;
 }
 div#console-input{
-  height: 32px;
+  min-height: 32px;
+  height: auto;
   
 }
 div.console-typing{
@@ -203,6 +208,14 @@ div#info-Container{
 
 .nav-item a{
   color:white;
+}
+
+.main-typing {
+  width: 100%;
+padding-left: 20%;
+z-index: 2;
+font-size: xx-large;
+line-height: normal;
 }
 
 @media only screen and (max-width: 600px) {
