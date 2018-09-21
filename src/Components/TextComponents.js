@@ -11,7 +11,7 @@ module.exports = {
     // `Starting terminal on: ${currDate}`,
     // `Initiating React Components`,
     `Load bg-gif:Top`,
-    `Load nav-Bar:Top`,
+    `Load nav-item:Top`,
     // `Load info-Container:Left`,
     // `Load Web-Resume`
   ]

@@ -65,36 +65,55 @@ class ConsoleWindow extends Component {
           const divName = divId.slice(0, splitIdx)
           const direction = divId.slice(splitIdx + 1)
           inputStr = `Loading: ${divName} ...`
-          if (divName === `nav-Bar` && mobileView) {
-            const nodeList = document.getElementsByClassName(`nav-item`)
-            let i
-            for (i = 0; i < nodeList.length; i++) {
-              nodeList[i].classList.add(`slide${i}`)
-              nodeList[i].childNodes.forEach((node, idx) => idx ? node.remove() : null)
-            }
-            setTimeout(() => {
-              let time = 0
-              const timeline = anime.timeline({ easing: `easeOutExpo`, })
-              timeline.add({
-                targets: `.nav-item.slide0`,
-                translateX: 365,
-                duration: 3000,
-                offset: time
-              })
-              time += 1000
-              for (let j = 1; j < i; j++) {
-                timeline.add({
-                  targets: `.nav-item.slide${j}`,
-                  translateX: [{ value: 365 }, { value: 365 }],
-                  translateY: [{ value: 0 }, { value: -200 }],
+          switch (divName) {
+            case `nav-item`:
+
+              const nodeList = document.getElementsByClassName(divName)
+              let i
+              for (i = 0; i < nodeList.length; i++) {
+                nodeList[i].classList.add(`slide${i}`)
+                if (mobileView) {
+                  nodeList[i].childNodes.forEach((node, idx) => idx ? node.remove() : null)
+                }
+              }
+
+              setTimeout(() => {
+                let time = 0
+                const timeline = anime.timeline({ easing: `easeOutExpo`, })
+                let startIdx = 0
+                if (mobileView) {
+                  timeline.add({
+                    targets: `.nav-item.slide0`,
+                    translateX: 365,
+                    duration: 3000,
+                    offset: time
+                  })
+                  time += 1000
+                  startIdx += 1
+                }
+                const timelineOptions = {
+                  translateY: 175,
                   duration: 10000,
                   offset: time
-                })
-                time += 1000
-              }
-            }, 1000
-            )
-          } else { document.getElementById(divName).classList.add(`slide${direction}`) }
+                }
+                if (mobileView) {
+                  timelineOptions.translateX = [{ value: 365 }, { value: 365 }],
+                    timelineOptions.translateY = [{ value: 0 }, { value: -200 }]
+                }
+                for (let j = startIdx; j < i; j++) {
+
+                  timelineOptions.targets = `.nav-item.slide${j}`
+                  console.log(timelineOptions)
+                  timeline.add(timelineOptions)
+                  timelineOptions.offset += 1000
+                }
+              }, 1000
+              )
+              break
+            default:
+              document.getElementById(divName).classList.add(`slide${direction}`)
+              break
+          }
           setTimeout(() => {
             document.getElementById(str).innerText += ` Complete`
             if (consWin) {

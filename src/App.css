@@ -10,25 +10,6 @@ body{
   background-color:black;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
 div#console-window{
   position: absolute;
   z-index: 3;
@@ -98,19 +79,23 @@ div#input-Field{
 }
 div#nav-Bar{
   padding-top:20px;
-  background:linear-gradient(to bottom, black,transparent);
+  background:linear-gradient(to bottom, black,black,transparent);
   color:white;
   display:flex;
   justify-content: center;
   align-content: center;
   position: absolute;
-  top: -100%;
+  /* top: -100%; */
   width: 100%;
+  /* height: 150%; */
   z-index: 1;
+  top:-165px;
+  height: 278px;
 }
 .nav-item{
   padding-right: 37.5px;
   padding-left: 37.5px;
+  height: max-content
 }
 img#bg-gif{
   position: absolute;
@@ -231,9 +216,9 @@ div#info-Container{
   }
   div#nav-Bar{
     padding-top:20px;
-    background:linear-gradient(to right, black,transparent);
+    background:linear-gradient(to right, black,black,transparent);
     color:white;
-    top: -20px;
+    top: -70px;
     left: -100%;
     width: auto;
     z-index: 1;
