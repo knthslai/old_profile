@@ -1,5 +1,6 @@
 body{
   background-color:black;
+  width: 100%;
 }
 *{
   color:white;
@@ -105,8 +106,7 @@ div#nav-Bar{
 img#bg-gif{
   position: absolute;
   top:-100%;
-  width: 100%;
-  height: auto;
+  height: 100%;
   opacity: .5;
   z-index: 0;
 }
@@ -211,16 +211,22 @@ div#info-Container{
 }
 
 .main-typing {
-  width: 100%;
-padding-left: 20%;
-z-index: 2;
-font-size: xx-large;
-line-height: normal;
+  width: 50%;
+  z-index: 2;
+  font-size: xx-large;
+  line-height: normal;
+}
+
+#navIcon{
+  opacity: 0;
 }
 
 @media only screen and (max-width: 600px) {
+  #navIcon{
+   opacity: 1;
+  }
   div#console-window{
-    width:100%;
+    min-width: 95%;
   }
   img#bg-gif{
     right:-95%;
@@ -230,12 +236,14 @@ line-height: normal;
   div#nav-Bar{
     padding-top:20px;
     background:linear-gradient(to right, black,black,transparent);
-    color:white;
-    top: -70px;
-    left: -100%;
+    top:-3%;
+    left: -65%;
     width: auto;
     z-index: 1;
     flex-direction: column;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .nav-item.slide0{
     padding-left:25px;

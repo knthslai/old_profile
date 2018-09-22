@@ -40,7 +40,7 @@ export default class Main extends Component {
           Hip-hop Dancer
           <Backspace delay={1400} count={25} speed={15} />
           Welcome to my personal website!
-          <Delay ms={4000} />
+          <Delay ms={4000} />Pn
         </Typing>)
     }
   }
