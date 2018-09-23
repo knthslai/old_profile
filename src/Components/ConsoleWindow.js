@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Icon } from 'semantic-ui-react';
 import TypingInput from './Typing';
 import anime from "animejs"
+import Typing from 'react-typing-animation/dist/Typing';
 
 
 class ConsoleWindow extends Component {
@@ -153,8 +154,17 @@ class ConsoleWindow extends Component {
   render() {
     return (
       <div id="console-window">
-        <div id="console-header"><h3> Display Console </h3><Icon name="window close outline" size="large" /></div>
-        <div id="console-display" />
+        <div id="console-header"><h3> Console </h3><Icon name="window close outline" size="large" /></div>
+        <div id="console-display" >
+          <Typing speed={15}>{`Starting terminal on: ${new Date().toLocaleString(`en-US`, {
+            weekday: `long`,
+            month: `long`,
+            day: `numeric`,
+            hour: `numeric`,
+            minute: `numeric`,
+            formatMatcher: `best fit`
+          })}`}</Typing>
+        </div>
         <div id="console-input">
           <TypingInput secretNum={this.state.secretNum} submitMessage={this.preSubmitMessage} />
         </div>

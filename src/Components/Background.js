@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export default class Background extends Component {
   render() {
     return (
       <div className="subView">
         <div id="Background">
-          <h1>Background Section</h1>
+          <ScrollAnimation animateIn='zoomInUp'
+            animateOut='zoomOutUp'>
+            <a>Background Section</a>
+          </ScrollAnimation>
         </div>
       </div>
     )

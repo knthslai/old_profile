@@ -6,6 +6,7 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "react": "^16.5.1",
+    "react-animate-on-scroll": "^2.1.5",
     "react-anime": "^2.2.0",
     "react-dom": "^16.5.1",
     "react-scripts": "1.1.5",
