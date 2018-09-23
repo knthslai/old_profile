@@ -47,7 +47,6 @@ class ConsoleWindow extends Component {
     const consWin = document.getElementById(`console-window`)
     const consoleRef = document.getElementById(`console-display`)
     const newStr = document.createElement(`div`);
-    console.log(`mobileView`, mobileView);
 
     let inputStr = str
     if (str === secretNum) {
@@ -87,13 +86,13 @@ class ConsoleWindow extends Component {
 
             setTimeout(() => {
               let time = 0
-              const timeline = anime.timeline({ easing: `easeOutExpo`, })
+              const timeline = anime.timeline({ easing: `easeInOutCirc`, })
               let startIdx = 0
               if (mobileView) {
                 timeline.add({
                   targets: `.nav-item.slide0`,
                   translateX: 225,
-                  duration: 3000,
+                  duration: 2000,
                   offset: time
                 })
                 time += 1000
@@ -101,7 +100,7 @@ class ConsoleWindow extends Component {
               }
               const timelineOptions = {
                 translateY: 225,
-                duration: 10000,
+                duration: 3450,
                 offset: time
               }
               if (mobileView) {

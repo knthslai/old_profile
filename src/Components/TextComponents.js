@@ -11,7 +11,5 @@ module.exports = {
     `Starting terminal on: ${currDate}`,
     `Load bg-gif:Top`,
     `Load nav-item:Top`,
-    // `Load info-Container:Left`,
-    // `Load Web-Resume`
   ]
 }
