@@ -15,15 +15,15 @@ body{
   width: 100%;
   height:100%;
   display: flex; 
+  justify-content: center;
   background-color:black;
   font-family: 'Montserrat';
-  align-content: center;
 }
 
 div#console-window{
-  top: 35%;
-  left:35%;
-  position: absolute;
+  justify-self: center;
+  align-self: center;
+  position: fixed;
   z-index: 3;
   min-width:380px;
   width:30%;
@@ -112,9 +112,8 @@ div#nav-Bar{
   height: max-content
 }
 img#bg-gif{
-  top:-100%;
   height: 100%;
-  opacity: .5;
+  opacity: 0;
   z-index: 0;
 }
 div#nav-Bar div{
@@ -206,11 +205,11 @@ div#info-Container{
 }
 
 @-webkit-keyframes slideTop {
-  100% { top: 0; }
+  100% { opacity: 0.5;}
 }
 
 @keyframes slideTop {
-  100% { top: 0; }
+  100% { opacity: 0.5;}
 }
 
 .nav-item a{
@@ -262,15 +261,21 @@ div#typingContainer{
   padding-top: 20%;
 }
 div#bg-gifOverlay {
+  height:100%;
+  width:100%;
   position: fixed;
 }
-@media (orientation:landscape){
+@media (max-width: 600px) and (orientation:landscape){
   img#bg-gif{
     width:100%;
     height:auto;
   }
 }
 @media only screen and (max-width: 600px) {
+  img#bg-gif{
+    width:auto;
+    height:100%;
+  }
   #navIcon{
     opacity: 1;
     padding-right: 37.5px;

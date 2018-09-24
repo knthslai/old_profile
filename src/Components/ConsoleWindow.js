@@ -100,9 +100,12 @@ class ConsoleWindow extends Component {
                 startIdx += 1
               }
               const timelineOptions = {
-                translateY: 225,
+                translateY: 185,
                 duration: 3450,
                 offset: time
+              }
+              if (window.innerHeight <= 375) {
+                timelineOptions.translateY = 145
               }
               if (mobileView) {
                 timelineOptions.translateX = [{ value: 225 }, { value: 225 }]
