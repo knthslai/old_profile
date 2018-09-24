@@ -112,12 +112,10 @@ div#nav-Bar{
   height: max-content
 }
 img#bg-gif{
-  position: fixed;
   top:-100%;
   height: 100%;
   opacity: .5;
   z-index: 0;
-  left: calc(100% - 1497px);
 }
 div#nav-Bar div{
   background-color:transparent;
@@ -263,6 +261,15 @@ div#typingContainer{
   align-items: center;
   padding-top: 20%;
 }
+div#bg-gifOverlay {
+  position: fixed;
+}
+@media (orientation:landscape){
+  img#bg-gif{
+    width:100%;
+    height:auto;
+  }
+}
 @media only screen and (max-width: 600px) {
   #navIcon{
     opacity: 1;
@@ -272,9 +279,6 @@ div#typingContainer{
   div#console-window{
     left:2.5%;
     min-width: 95%;
-  }
-  img#bg-gif{
-    left: calc((0% - 1497px)/2);
   }
   div#nav-Bar{
     padding-top:20px;

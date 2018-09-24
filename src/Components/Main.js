@@ -15,6 +15,7 @@ export default class Main extends Component {
         <Background />
         <Posts />
       </div>
+
     )
   }
 }
