@@ -112,7 +112,8 @@ div#nav-Bar{
   height: max-content
 }
 img#bg-gif{
-  height: 100%;
+  width:100%;
+  height:100%;
   opacity: 0;
   z-index: 0;
 }
@@ -261,11 +262,13 @@ div#typingContainer{
   padding-top: 20%;
 }
 div#bg-gifOverlay {
-  height:100%;
   width:100%;
+  height:auto;
   position: fixed;
+  justify-content: center;
+  display: flex;
 }
-@media (max-width: 600px) and (orientation:landscape){
+@media (device-aspect-ratio: 812/375) and (orientation:landscape){
   img#bg-gif{
     width:100%;
     height:auto;
