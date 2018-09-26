@@ -12,7 +12,7 @@ export default class NavBar extends Component {
           <a> How I became<br />
             a programmer.<br />
             I found my<br />
-            passion...<br />
+            passion through...<br />
           </a>
         </div>
         <div id="projects" className="nav-item">

@@ -30,7 +30,7 @@ class App extends Component {
         {this.state.mainLoad &&
           <Main />
         }
-        <div id={`bg-gifOverlay`}><img alt="BGGif" id="bg-gif" src={require(`./BGGif.gif`)} /></div>
+        <div id="bg-gifOverlay"><img alt="BGGif" id="bg-gif" src={require(`./imgs/BGGif.gif`)} /></div>
       </div>
     );
   }

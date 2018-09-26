@@ -10,6 +10,7 @@
     "react-anime": "^2.2.0",
     "react-dom": "^16.5.1",
     "react-scripts": "1.1.5",
+    "react-slideshow-image": "^1.0.1",
     "react-typing-animation": "^1.4.0",
     "semantic-ui-react": "^0.82.5"
   },
