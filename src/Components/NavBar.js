@@ -29,7 +29,6 @@ export default class NavBar extends Component {
         setTimeout(() => {
           const timeline = anime.timeline({ easing: `easeInOutCirc`, })
           time = 0
-          menuBtnRef.style.backgroundColor = `black`
           timelineOptions.translateX = [{ value: 225 }]
           timelineOptions.translateY = [{ value: -125 }]
           for (let j = 1; j < 5; j++) {
@@ -37,7 +36,10 @@ export default class NavBar extends Component {
             timeline.add(timelineOptions)
             timelineOptions.offset += 250
           }
-          inUse = false
+          setTimeout(() => {
+            menuBtnRef.style.backgroundColor = `black`
+            inUse = false
+          }, 3000);
         }, 5000)
       }
     }
