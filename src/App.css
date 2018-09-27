@@ -255,10 +255,16 @@ div#info-Container{
   font-size: xx-large;
   line-height: normal;
 }
-div.animated>a{
+.sectionTitle{
+  display: flex;
+  flex-direction: column;
+}
+div.animated a{
   color:white;
-  font-size: xx-large;
+  font-size: -webkit-xxx-large;
   line-height: normal;
+  align-self:center;
+  font-style:oblique;
 }
 
 #navIcon{

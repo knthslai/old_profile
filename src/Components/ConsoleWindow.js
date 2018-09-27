@@ -12,6 +12,12 @@ class ConsoleWindow extends Component {
       secretNum: Math.random(9) * Date.now(),
     }
   }
+  componentDidMount() {
+    window.addEventListener(`resize`, () => {
+      this.props.resize()
+      this.preSubmitMessage(`Load nav-item:Top`)
+    });
+  }
   addTypingEventListener = (submitMessage) => {
     document.addEventListener(`keydown`, evt => {
       const inputField = document.getElementById(`input-Field`)
@@ -84,40 +90,38 @@ class ConsoleWindow extends Component {
                 nodeList[i].childNodes.forEach((node, idx) => idx ? node.remove() : null)
               }
             }
-
-            setTimeout(() => {
-              let time = 0
-              const timeline = anime.timeline({ easing: `easeInOutCirc`, })
-              let startIdx = 0
-              if (mobileView) {
-                timeline.add({
-                  targets: `.nav-item.slide0`,
-                  translateX: 225,
-                  duration: 2000,
-                  offset: time
-                })
-                time += 1000
-                startIdx += 1
-              }
-              const timelineOptions = {
-                translateY: 185,
-                duration: 3450,
+            let time = 0
+            const timeline = anime.timeline({ easing: `easeInOutCirc`, })
+            let startIdx = 0
+            if (mobileView) {
+              timeline.add({
+                targets: `.nav-item.slide0`,
+                translateX: 225,
+                duration: 2000,
                 offset: time
-              }
-              if (window.innerHeight <= 375) {
-                timelineOptions.translateY = 145
-              }
-              if (mobileView) {
-                timelineOptions.translateX = [{ value: 225 }, { value: 225 }]
-                timelineOptions.translateY = [{ value: 0 }, { value: -200 }]
-              }
-              for (let j = startIdx; j < i; j++) {
-                timelineOptions.targets = `.nav-item.slide${j}`
-                timeline.add(timelineOptions)
-                timelineOptions.offset += 1000
-              }
-            }, 1000
-            )
+              })
+              time += 1000
+              startIdx += 1
+            }
+            const timelineOptions = {
+              translateY: 185,
+              duration: 3450,
+              offset: time
+            }
+            if (window.innerHeight <= 375) {
+              timelineOptions.translateY = 145
+            }
+            if (mobileView) {
+              timelineOptions.translateX = [{ value: 225 }, { value: 225 }]
+              timelineOptions.translateY = [{ value: 0 }, { value: -200 }]
+            }
+            for (let j = startIdx; j < i; j++) {
+              timelineOptions.targets = `.nav-item.slide${j}`
+              timeline.add(timelineOptions)
+              timelineOptions.offset += 1000
+            }
+
+
             break
           default:
             document.getElementById(divName).classList.add(`slide${direction}`)

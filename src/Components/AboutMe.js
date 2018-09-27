@@ -8,9 +8,9 @@ export default class AboutMe extends Component {
     return (
       <div className="subView">
         <div id="AboutMe">
-          <ScrollAnimation animateIn='zoomInUp'
-            animateOut='zoomOutUp'>
-            <a>About me Section</a>
+          <ScrollAnimation animateIn='flipInY'
+            animateOut='flipOutY'>
+            <div className="sectionTitle"><a> - About me  - </a></div>
           </ScrollAnimation>
           {textComponent.aboutMe.map((ele, idx) => {
             let direction = `Left`
@@ -20,7 +20,7 @@ export default class AboutMe extends Component {
                 animateIn={`fadeIn${direction}Big`}
                 animateOut={`fadeOut${direction}Big`}
               >
-                <img src={require(`../imgs/${ele.img[0]}`)} />
+                <img alt={ele.img[0]} src={require(`../imgs/${ele.img[0]}`)} />
                 <p>{ele.text}</p>
               </ScrollAnimation>
             )

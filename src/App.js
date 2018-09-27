@@ -12,7 +12,6 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    window.addEventListener(`resize`, this.resize);
     document.getElementById(`console-window`).style.animation = `fadein 2s forwards`
   }
   resize = () => {
@@ -25,7 +24,7 @@ class App extends Component {
     // console.log(`Mobile Mode: `, this.state.mobileView)
     return (
       <div className="App">
-        <ConsoleWindow mobile={this.state.mobileView} newState={this.newState.bind(this)} />
+        <ConsoleWindow resize={this.resize} mobile={this.state.mobileView} newState={this.newState.bind(this)} />
         <NavBar mobile={this.state.mobileView} mobileView={this.state.mobileView} />
         {this.state.mainLoad &&
           <Main />

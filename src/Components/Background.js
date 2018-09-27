@@ -6,9 +6,9 @@ export default class Background extends Component {
     return (
       <div className="subView">
         <div id="Background">
-          <ScrollAnimation animateIn='zoomInUp'
-            animateOut='zoomOutUp'>
-            <a>Background Section</a>
+          <ScrollAnimation animateIn='flipInY'
+            animateOut='flipOutY'>
+            <div className="sectionTitle"><a> - Background  - </a></div>
           </ScrollAnimation>
         </div>
       </div>

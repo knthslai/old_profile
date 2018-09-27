@@ -22,12 +22,12 @@ export default class TypingInput extends Component {
             this.setState({ arrInput })
           } else if (lengthInput === 1) {
             this.props.submitMessage(arrInput[0])
-            setTimeout(() => this.props.submitMessage(this.props.secretNum), 2500)
+            setTimeout(() => this.props.submitMessage(this.props.secretNum), 1000)
             this.setState({ loading: false })
           }
         }}>
           {this.state.arrInput[0]}
-          <Delay ms={1500} />
+          <Delay ms={1000} />
           <Reset count={1} />
         </Typing >
       )
