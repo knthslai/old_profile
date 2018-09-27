@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <ConsoleWindow resize={this.resize} mobile={this.state.mobileView} newState={this.newState.bind(this)} />
-        <NavBar mobile={this.state.mobileView} mobileView={this.state.mobileView} />
+        <NavBar load={this.state.mainLoad} mobile={this.state.mobileView} mobileView={this.state.mobileView} />
         {this.state.mainLoad &&
           <Main />
         }

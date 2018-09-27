@@ -113,7 +113,7 @@ class ConsoleWindow extends Component {
             }
             if (mobileView) {
               timelineOptions.translateX = [{ value: 225 }, { value: 225 }]
-              timelineOptions.translateY = [{ value: 0 }, { value: -200 }]
+              timelineOptions.translateY = [{ value: 0 }, { value: -150 }]
             }
             for (let j = startIdx; j < i; j++) {
               timelineOptions.targets = `.nav-item.slide${j}`
