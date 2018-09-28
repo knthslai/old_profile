@@ -19,9 +19,10 @@ export default class AboutMe extends Component {
               <ScrollAnimation className={`textBox${direction}`} key={idx}
                 animateIn={`fadeIn${direction}Big`}
                 animateOut={`fadeOut${direction}Big`}
-              >
-                <img alt={ele.img[0]} src={require(`../imgs/${ele.img[0]}`)} />
-                <div className="textColumn">
+              >{
+                  ele.img[0] &&
+                  <img alt={ele.img[0]} src={require(`../imgs/${ele.img[0]}`)} />
+                }<div className="textColumn">
                   {
                     text.map((txt, idx) => {
                       if (txt.length) {
@@ -40,10 +41,6 @@ export default class AboutMe extends Component {
               </ScrollAnimation>
             )
           })}
-          <ScrollAnimation className="textPara" animateIn='flipInY'
-            animateOut='flipOutY'>
-            <p>I have found my love for programming very naturally when serving up database queries. </p><p>As well as anything in between that and launching projects to a functional state. </p><p>I currently specialize in full stack development with JavaScript integrations here in NYC.</p>
-          </ScrollAnimation>
         </div>
       </div>
     )
