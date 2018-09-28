@@ -113,7 +113,7 @@ class ConsoleWindow extends Component {
             }
             if (mobileView) {
               timelineOptions.translateX = [{ value: 225 }, { value: 225 }]
-              timelineOptions.translateY = [{ value: 0 }, { value: -150 }]
+              timelineOptions.translateY = [{ value: 0 }, { value: -300 }]
             }
             for (let j = startIdx; j < i; j++) {
               timelineOptions.targets = `.nav-item.slide${j}`
@@ -123,8 +123,15 @@ class ConsoleWindow extends Component {
 
 
             break
+          case `bg-gif`:
+            const bgRef = document.getElementById(`bg-gif`)
+            bgRef.classList.add(`slide${direction}`)
+            setTimeout(() => {
+              bgRef.style.opacity = `0.5`
+              bgRef.classList.remove(`slide${direction}`)
+            }, 3000)
+            break
           default:
-            document.getElementById(divName).classList.add(`slide${direction}`)
             break
         }
         setTimeout(() => {
