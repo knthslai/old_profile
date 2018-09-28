@@ -5,7 +5,10 @@ div.projectSection{
   width:100%;
 }
 div.projectImgDiv{
-  width:50%;
+  width: 50%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
 }
 div.projectInfo{
   width: 50%;
@@ -14,8 +17,7 @@ div.projectInfo{
 div.projectLine{
   width:100%;
   font-size: x-large;
-  display: flex;
-  flex-direction: row;
+  display: block;
 }
 div.projectLine *{
   justify-self: center;
@@ -73,9 +75,13 @@ display:flex;
 flex-direction: row;
 margin-top:15px;
 }
-div.subView img{
-  width:50%;
-  height: 50%;
+div#AboutMe img{
+  width: 50%;
+    height: 50%;
+}
+div#Projects img{
+  min-width: 50%;
+  max-width: 100%;
 }
 div#console-window{
   justify-self: center;
@@ -287,8 +293,13 @@ div.animated a{
   color:white;
   font-size: -webkit-xxx-large;
   line-height: normal;
-  align-self:center;
   font-style:oblique;
+  border-top: 1px solid;
+  border-bottom: 3px solid;
+  width: auto;
+  text-align: center;
+  align-self: center;
+  margin: 20%;
 }
 .textPara{
   margin-top:20%;
@@ -339,13 +350,16 @@ div#bg-gifOverlay {
   justify-content: center;
   display: flex;
 }
-@media (device-aspect-ratio: 812/375) and (orientation:landscape){
+@media (orientation:landscape){
   img#bg-gif{
     width:100%;
     height:auto;
   }
 }
 @media only screen and (max-width: 600px) {
+  div.animated a{
+    width:100%;
+  }
   div.projectImgDiv{
     width:100%
   }
@@ -370,6 +384,10 @@ div#bg-gifOverlay {
   div.subView img{
     width:100%;
   }
+  div#AboutMe img{
+    width: 100%;
+      height: auto;
+  }
   img#bg-gif{
     width:auto;
     height:100%;
@@ -377,7 +395,10 @@ div#bg-gifOverlay {
   #navIcon{
     opacity: 1;
     padding-right: 37.5px;
-    padding-left: 37.5px;
+    padding-left: 61.5px;
+    padding-top: 10px;
+    height: auto;
+    padding-bottom: 10px;
   }
   div#console-window{
     left:2.5%;

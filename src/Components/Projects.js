@@ -16,7 +16,7 @@ export default class Projects extends Component {
               <div key={idx} className="projectSection">
 
                 <div className="projectImgDiv">
-                  <ScrollAnimation animateIn="slideInLeft" animateOut="slideOutLeft"><img style={{ width: `100%`, height: `auto` }} alt="project.img" src={require(`../imgs/${project.img}`)} />
+                  <ScrollAnimation animateIn="slideInLeft" animateOut="slideOutLeft"><img alt="project.img" src={require(`../imgs/${project.img}`)} />
                   </ScrollAnimation>
                 </div>
                 <div className="projectInfo">
@@ -24,10 +24,13 @@ export default class Projects extends Component {
                     {
                       Object.keys(project).map(key => {
                         return (
-                          <div className="projectLine" key={key}>
-                            <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
-                            <p>{project[key]}</p>
-                          </div>)
+                          <ScrollAnimation key={key} animateIn="flipInX" animateOut="flipOutX">
+                            <div className="projectLine" >
+                              <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
+                              <p>{project[key]}</p>
+                            </div>
+                          </ScrollAnimation>
+                        )
                       })
                     }
                   </ScrollAnimation>

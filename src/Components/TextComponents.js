@@ -16,7 +16,7 @@ module.exports = {
     git: `https://github.com/knthslai/clique-on`,
     role: `Sole Developer`,
     desc: `An online tool to track friends in realtime featuring a live chat box.`,
-    keyPoints: `Utilized Pubnub API to dispatch, broadcast up - to - the - millisecond location and messaging and Google Maps API for map navigation. Designed persistent account interface for guest, signup, login. Implemented URL based room management for users to share and communicate through.`, img: `Molli.gif`
+    keyPoints: `Utilized Pubnub API to dispatch, broadcast up - to - the - millisecond location and messaging and Google Maps API for map navigation. Designed persistent account interface for guest, signup, login. Implemented URL based room management for users to share and communicate through.`, img: `cliqueOn.gif`
   }
   ]
 }
