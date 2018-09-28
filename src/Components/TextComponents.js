@@ -9,13 +9,13 @@ module.exports = {
   projects: [{
     title: `Molli`, git: `https://github.com/capstone/molli`,
     role: `API & Database Management`,
-    desc: `A mobile application developed to cater to the E - Sports audience and provide microtransaction bets.`,
+    description: `A mobile application developed to cater to the E - Sports audience and provide microtransaction bets.`,
     keyPoints: `Incorporated Firebase Cloud Functions to handle server side API requests to continuously check results.Created live notifications for obtaining the scores of the match they are watching.Provided realtime chatrooms feature for a more immersive user experience.`, img: `Molli.gif`
   }, {
     title: `Clique-On`,
     git: `https://github.com/knthslai/clique-on`,
     role: `Sole Developer`,
-    desc: `An online tool to track friends in realtime featuring a live chat box.`,
+    description: `An online tool to track friends in realtime featuring a live chat box.`,
     keyPoints: `Utilized Pubnub API to dispatch, broadcast up - to - the - millisecond location and messaging and Google Maps API for map navigation. Designed persistent account interface for guest, signup, login. Implemented URL based room management for users to share and communicate through.`, img: `cliqueOn.gif`
   }
   ]

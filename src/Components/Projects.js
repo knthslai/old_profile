@@ -23,14 +23,33 @@ export default class Projects extends Component {
                   <ScrollAnimation animateIn="slideInRight" animateOut="slideOutRight">
                     {
                       Object.keys(project).map(key => {
-                        return (
-                          <ScrollAnimation key={key} animateIn="flipInX" animateOut="flipOutX">
-                            <div className="projectLine" >
-                              <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
-                              <p>{project[key]}</p>
-                            </div>
-                          </ScrollAnimation>
-                        )
+                        let para = project[key]
+                        if (key !== `img`) {
+                          if (key === `keyPoints`) {
+                            para = para.split(`.`)
+                            para.splice(-1, 1)
+                            return (
+                              <ScrollAnimation key={key} animateIn="flipInX" animateOut="flipOutX">
+                                <div className="projectLine" >
+                                  <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
+                                  <p>{para.map(line => {
+                                    return (
+                                      <span key={line}>- {line} < br />< br /></span>)
+                                  })}</p>
+                                </div>
+                              </ScrollAnimation>
+                            )
+                          } else {
+                            return (
+                              <ScrollAnimation key={key} animateIn="flipInX" animateOut="flipOutX">
+                                <div className="projectLine" >
+                                  <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
+                                  <p>{para}</p>
+                                </div>
+                              </ScrollAnimation>
+                            )
+                          }
+                        }
                       })
                     }
                   </ScrollAnimation>
