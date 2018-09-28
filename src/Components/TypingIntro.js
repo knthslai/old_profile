@@ -26,8 +26,6 @@ export default class TypingIntro extends Component {
     else {
       return (
         <Typing id="typing-Intro" className="main-typing" loop={false} speed={25} startDelay={2000} onFinishedTyping={() => this.setState({ load: true })}>
-          Hello world!
-            <Backspace delay={1500} count={12} speed={15} />
           My name is Kenneth Lai
             <Backspace delay={2000} count={22} speed={15} />
           I am a Programmer

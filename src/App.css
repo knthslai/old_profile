@@ -1,4 +1,25 @@
-
+div.projectSection{
+  padding:10px;
+  display:flex;
+  flex-direction: row;
+  width:100%;
+}
+div.projectImgDiv{
+  width:50%;
+}
+div.projectInfo{
+  width: 50%;
+  padding:10px;
+}
+div.projectLine{
+  width:100%;
+  font-size: x-large;
+  display: flex;
+  flex-direction: row;
+}
+div.projectLine *{
+  justify-self: center;
+}
 body{
   color:white;
   background-color:black;
@@ -253,7 +274,7 @@ div#info-Container{
 }
 
 .main-typing {
-  width: 50%;
+  min-width: 50%;
   z-index: 2;
   font-size: xx-large;
   line-height: normal;
@@ -325,6 +346,19 @@ div#bg-gifOverlay {
   }
 }
 @media only screen and (max-width: 600px) {
+  div.projectImgDiv{
+    width:100%
+  }
+  div.projectSection{
+    flex-direction: column;
+  }
+  div.projectInfo{
+    width: 100%;
+    padding:10px;
+  }
+  div.projectLine{
+    display: block;
+  }
   .textBoxLeft{
     flex-direction: column;
     align-items: center;
