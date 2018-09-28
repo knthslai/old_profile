@@ -345,10 +345,12 @@ div#typingContainer{
 }
 div#bg-gifOverlay {
   width:100%;
-  height:auto;
+  height:100%;
   position: fixed;
   justify-content: center;
   display: flex;
+  content: "";
+  z-index: 0;
 }
 @media (orientation:landscape){
   img#bg-gif{
