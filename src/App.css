@@ -178,6 +178,8 @@ img#bg-gif{
   height:100%;
   opacity: 0;
   z-index: 0;
+  align-self: center;
+  justify-self: center
 }
 div#nav-Bar div{
   background-color:transparent;

@@ -8,7 +8,7 @@ export default class Projects extends Component {
       <div className="subView">
         <div id="Projects">
           <ScrollAnimation animateIn='flipInY'
-            animateOut='flipOutY'>
+            animateOnce={true}>
             <div className="sectionTitle"><a> - Projects  - </a></div>
           </ScrollAnimation>
           {textComponent.projects.map((project, idx) => {
@@ -16,11 +16,11 @@ export default class Projects extends Component {
               <div key={idx} className="projectSection">
 
                 <div className="projectImgDiv">
-                  <ScrollAnimation animateIn="slideInLeft" animateOut="slideOutLeft"><img alt="project.img" src={require(`../imgs/${project.img}`)} />
+                  <ScrollAnimation animateIn="slideInLeft" animateOnce={true}><img alt="project.img" src={require(`../imgs/${project.img}`)} />
                   </ScrollAnimation>
                 </div>
                 <div className="projectInfo">
-                  <ScrollAnimation animateIn="slideInRight" animateOut="slideOutRight">
+                  <ScrollAnimation animateIn="slideInRight" animateOnce={true}>
                     {
                       Object.keys(project).map(key => {
                         let para = project[key]
@@ -29,7 +29,8 @@ export default class Projects extends Component {
                             para = para.split(`.`)
                             para.splice(-1, 1)
                             return (
-                              <ScrollAnimation key={key} animateIn="flipInX" animateOut="flipOutX">
+                              <ScrollAnimation key={key} animateIn="fadeInUp"
+                                animateOnce={true}>
                                 <div className="projectLine" >
                                   <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
                                   <p>{para.map(line => {
@@ -39,9 +40,20 @@ export default class Projects extends Component {
                                 </div>
                               </ScrollAnimation>
                             )
+                          } else if (key.includes(`Link`)) {
+                            return (
+                              <ScrollAnimation key={key} animateIn="fadeInUp"
+                                animateOnce={true}>
+                                <div className="projectLine" >
+                                  <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
+                                  <p href={para}>{para}</p>
+                                </div>
+                              </ScrollAnimation>
+                            )
                           } else {
                             return (
-                              <ScrollAnimation key={key} animateIn="flipInX" animateOut="flipOutX">
+                              <ScrollAnimation key={key} animateIn="fadeInUp"
+                                animateOnce={true}>
                                 <div className="projectLine" >
                                   <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
                                   <p>{para}</p>
@@ -49,6 +61,8 @@ export default class Projects extends Component {
                               </ScrollAnimation>
                             )
                           }
+                        } else {
+                          return null
                         }
                       })
                     }

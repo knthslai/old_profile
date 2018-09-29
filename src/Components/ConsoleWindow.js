@@ -136,7 +136,7 @@ class ConsoleWindow extends Component {
         }
         setTimeout(() => {
           document.getElementById(str).innerText += ` Complete`
-        }, 2000)
+        }, 1000)
 
       }
       newStr.style.color = `rgb(255, 255, 116)`
