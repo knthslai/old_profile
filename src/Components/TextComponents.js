@@ -21,5 +21,16 @@ module.exports = {
     description: `An online tool to track friends in realtime featuring a live chat box.`,
     keyPoints: `Utilized Pubnub API to dispatch, broadcast up - to - the - millisecond location and messaging and Google Maps API for map navigation. Designed persistent account interface for guest, signup, login. Implemented URL based room management for users to share and communicate through.`, img: `cliqueOn.gif`
   }
+  ],
+  background: [
+    {
+      company: `TECHNOLOGY CONSULTANT`, location: `New York, NY`,
+      duties: `Provided IT support and services in several companies ranging from security to diamond industry`, time: `October 2016 – June 2018`
+    },
+    { company: `CHADBOURNE & PARKE LLP`, location: `New York, NY`, business: ` Mid-sized law firm with practice in project finance and energy, international insurance and multi-jurisdictional litigation.`, title: `Digital Marketing`, time: `October 2015 – September 2016`, duties: `Automated the system migration project for lawyers to help transition from Outlook to a centralized CRM. Scripted in WinAutomation to read/search/write over 10,000 contacts for daily upkeep. Reported website traffic with click-through reports, linked patterns, page sources and viewing analytics. Managed detail-oriented additions of articles, lawyer profiles, SEO tags, user flow on the law firm’s global website.` },
+    {
+      company: `BENESSE AMERICA INC.`, location: `New York, NY`, business: `Education-based startup to provide a web app tool for teachers to use in class.`, title: `Database Administrator, IT Specialist`, time: `July 2014 – April 2015`, duties:
+        ` Created an entire backend database with a front end application using Microsoft Access. Responsible for all backend statistics from webpage reports to product application reports. Deployed automated scripts to complete duties such as account creations, contact verification and email blasts.`
+    }
   ]
 }
