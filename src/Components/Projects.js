@@ -9,7 +9,7 @@ export default class Projects extends Component {
         <div id="Projects">
           <ScrollAnimation animateIn='flipInY'
             animateOnce={true}>
-            <div className="sectionTitle"><a> - Projects  - </a></div>
+            <div className="sectionTitle"><a>Projects </a></div>
           </ScrollAnimation>
           {textComponent.projects.map((project, idx) => {
             return (
@@ -46,7 +46,7 @@ export default class Projects extends Component {
                                 animateOnce={true}>
                                 <div className="projectLine" >
                                   <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
-                                  <p href={para}>{para}</p>
+                                  <a className="hyperLinks" target="_blank" href={para}>{para}</a>
                                 </div>
                               </ScrollAnimation>
                             )

@@ -9,7 +9,7 @@ export default class AboutMe extends Component {
         <div id="AboutMe">
           <ScrollAnimation animateIn='flipInY'
             animateOnce={true}>
-            <div className="sectionTitle"><a> - About me  - </a></div>
+            <div className="sectionTitle"><a>About me </a></div>
           </ScrollAnimation>
           {textComponent.aboutMe.map((ele, idx) => {
             let direction = `Left`

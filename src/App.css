@@ -6,7 +6,7 @@ div.projectSection{
 }
 div.projectImgDiv{
   width: 50%;
-  display: grid;
+  display: flex;
   align-content: center;
   justify-content: center;
 }
@@ -31,7 +31,9 @@ body{
   padding:0;
 }
 .textColumn{
+  display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 #root{
   width: 100%;
@@ -62,8 +64,20 @@ border-top-right-radius: 15px;
 width:80%;
 align-self: flex-start;
 flex-direction: row-reverse;
-margin-top:15px;
+margin-top:30px;
 display:flex;
+}
+div.projectImgDiv >div{
+  height:100%;
+  display: contents;
+  width:100%;
+}
+.hyperLinks{
+  font-size: large;
+  padding:10px;
+  color:white;
+  z-index: 3;
+  display: block;
 }
 .textBoxRight{
   background-color: rgba(0, 0, 0, 0.60);
@@ -73,21 +87,24 @@ width:80%;
 align-self: flex-end;
 display:flex;
 flex-direction: row;
-margin-top:15px;
+margin-top:30px;
 }
 div#AboutMe img{
   width: 50%;
     height: 50%;
 }
 div#Projects img{
-  min-width: 50%;
+  min-width: 70%;
   max-width: 100%;
+  height: auto;
+  align-self: center;
+  justify-self: center;
 }
 div#console-window{
   justify-self: center;
   align-self: center;
   position: fixed;
-  z-index: 3;
+  z-index: 1;
   min-width:380px;
   width:30%;
   border:1px solid rgba(255, 255, 255, 0.42);
@@ -291,7 +308,7 @@ div#info-Container{
   display: flex;
   flex-direction: column;
 }
-div.animated a{
+div.sectionTitle>a{
   color:white;
   font-size: -webkit-xxx-large;
   line-height: normal;

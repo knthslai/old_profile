@@ -8,7 +8,7 @@ export default class Background extends Component {
         <div id="Background">
           <ScrollAnimation animateIn='flipInY'
             animateOut='flipOutY'>
-            <div className="sectionTitle"><a> - Background  - </a></div>
+            <div className="sectionTitle"><a>Background </a></div>
           </ScrollAnimation>
         </div>
       </div>

@@ -8,7 +8,7 @@ export default class Posts extends Component {
         <div id="Posts">
           <ScrollAnimation animateIn='flipInY'
             animateOut='flipOutY'>
-            <div className="sectionTitle"><a> - Posts  - </a></div>
+            <div className="sectionTitle"><a>Posts </a></div>
           </ScrollAnimation>
         </div>
       </div>
