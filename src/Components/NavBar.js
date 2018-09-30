@@ -16,7 +16,7 @@ export default class NavBar extends Component {
           offset: time
         }
         menuBtnRef.style.backgroundColor = `gray`
-        timelineOptions.translateX = [{ value: 225 }]
+        timelineOptions.translateX = [{ value: 275 }]
         timelineOptions.translateY = [{ value: 15 }]
 
 
@@ -29,7 +29,7 @@ export default class NavBar extends Component {
         setTimeout(() => {
           const timeline = anime.timeline({ easing: `easeInOutCirc`, })
           time = 0
-          timelineOptions.translateX = [{ value: 225 }]
+          timelineOptions.translateX = [{ value: 275 }]
           timelineOptions.translateY = [{ value: -225 }]
           for (let j = 1; j < 5; j++) {
             timelineOptions.targets = `.nav-item.slide${j}`

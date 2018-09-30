@@ -530,7 +530,7 @@ transform:scale(1.25);
   }
   div#nav-Bar{
     padding-top:20px;
-    background:linear-gradient(to right, black,black,transparent);
+    /* background:linear-gradient(to right, black,black,transparent); */
     top:-3%;
     left: -65%;
     width: auto;
