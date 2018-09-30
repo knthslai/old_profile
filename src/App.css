@@ -1,5 +1,6 @@
 div.backgroundSection{
   display: flex;
+  justify-content: space-evenly;
   flex-direction: row;
   width:100%;
 }
@@ -7,7 +8,7 @@ div.backgroundSection h2{
   text-align: center;
 }
 div.backgroundSection p{
-width: fit-content;
+width: max-content;
 }
 div.backgroundInfo{
   width: 100%;

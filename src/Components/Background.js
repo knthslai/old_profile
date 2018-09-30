@@ -15,7 +15,7 @@ export default class Background extends Component {
             return (
               <div key={idx} className="projectSection">
                 <div className="backgroundInfo">
-                  <ScrollAnimation className="backgroundSection" animateIn="slideInLeft" animateOnce={true}>
+                  <ScrollAnimation className="backgroundSection" animateIn="fadeIn" animateOnce={true}>
                     {
                       Object.keys(project).map(key => {
                         let para = project[key]
