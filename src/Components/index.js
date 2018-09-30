@@ -7,4 +7,4 @@ export { default as TypingIntro } from './TypingIntro';
 export { default as AboutMe } from './AboutMe';
 export { default as Projects } from './Projects';
 export { default as Background } from './Background';
-export { default as Posts } from './Posts'
+export { default as Social } from './Social'

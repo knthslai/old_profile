@@ -70,10 +70,9 @@ export default class NavBar extends Component {
           <a style={{ backgroundColor: `transparent` }}> Working in NYC has taught me valuable and transferable skills!
           </a>
         </div>
-        <div id="Posts" className="nav-item" onClick={() => this.handleClick(`Posts`)}>
-          <h2>Posts</h2>
-          <a style={{ backgroundColor: `transparent` }}> The best way to learn is teach. Let's share the wealth!
-          </a>
+        <div id="social" className="nav-item" onClick={() => this.handleClick(`Social`)}>
+          <h2>Social</h2>
+          <a style={{ backgroundColor: `transparent` }}>Let's connect through Linkedin, Github, or E-Mail!</a>
         </div>
       </div>
     )

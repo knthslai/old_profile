@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Icon } from 'semantic-ui-react';
-import { Posts, Background, Projects, AboutMe, TypingIntro } from '../Components'
+import { Social, Background, Projects, AboutMe, TypingIntro } from '../Components'
 
 export default class Main extends Component {
   render() {
@@ -18,7 +18,7 @@ export default class Main extends Component {
         <AboutMe />
         <Projects />
         <Background />
-        <Posts />
+        <Social />
       </div>
 
     )
