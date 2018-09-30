@@ -85,6 +85,9 @@ display:flex;
   z-index: 3;
   display: block;
 }
+div.projectLine :nth-child(2){
+  padding-left:5%;
+}
 .textBoxRight{
   background-color: rgba(0, 0, 0, 0.60);
   border-bottom-left-radius: 15px;
