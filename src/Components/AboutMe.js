@@ -19,10 +19,9 @@ export default class AboutMe extends Component {
               <ScrollAnimation className={`textBox${direction}`} key={idx}
                 animateIn={`fadeIn${direction}Big`}
                 animateOnce={true}
-              >{
-                  ele.img[0] &&
-                  <img alt={ele.img[0]} src={require(`../imgs/${ele.img[0]}`)} />
-                }<div className="textColumn">
+              ><div className="imgColumn">
+                  <img alt={ele.img[0]} src={require(`../imgs/${ele.img[0]}`)} /></div>
+                <div className="textColumn">
                   {
                     text.map((txt, idx) => {
                       if (txt.length) {

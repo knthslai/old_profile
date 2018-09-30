@@ -16,7 +16,7 @@ export default class Projects extends Component {
               <div key={idx} className="projectSection">
 
                 <div className="projectImgDiv">
-                  <ScrollAnimation animateIn="slideInLeft" animateOnce={true}><img alt="project.img" src={require(`../imgs/${project.img}`)} />
+                  <ScrollAnimation className="imgContainer" animateIn="slideInLeft" animateOnce={true}><div><img alt="project.img" src={require(`../imgs/${project.img}`)} /></div>
                   </ScrollAnimation>
                 </div>
                 <div className="projectInfo">
@@ -29,7 +29,7 @@ export default class Projects extends Component {
                             para = para.split(`.`)
                             para.splice(-1, 1)
                             return (
-                              <ScrollAnimation key={key} animateIn="fadeInUp"
+                              <ScrollAnimation key={key} animateIn="fadeIn"
                                 animateOnce={true}>
                                 <div className="projectLine" >
                                   <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
@@ -42,7 +42,7 @@ export default class Projects extends Component {
                             )
                           } else if (key.includes(`Link`)) {
                             return (
-                              <ScrollAnimation key={key} animateIn="fadeInUp"
+                              <ScrollAnimation key={key} animateIn="fadeIn"
                                 animateOnce={true}>
                                 <div className="projectLine" >
                                   <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>
@@ -52,7 +52,7 @@ export default class Projects extends Component {
                             )
                           } else {
                             return (
-                              <ScrollAnimation key={key} animateIn="fadeInUp"
+                              <ScrollAnimation key={key} animateIn="fadeIn"
                                 animateOnce={true}>
                                 <div className="projectLine" >
                                   <h2>{key.charAt(0).toUpperCase() + key.slice(1)}</h2>

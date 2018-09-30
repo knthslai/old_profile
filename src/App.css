@@ -67,10 +67,16 @@ flex-direction: row-reverse;
 margin-top:30px;
 display:flex;
 }
-div.projectImgDiv >div{
+.imgContainer{
   height:100%;
-  display: contents;
   width:100%;
+}
+.imgContainer>div{
+  height:100%;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .hyperLinks{
   font-size: large;
@@ -89,9 +95,13 @@ display:flex;
 flex-direction: row;
 margin-top:30px;
 }
-div#AboutMe img{
-  width: 50%;
-    height: 50%;
+.imgColumn{
+  width: 100%;
+    height: auto;
+}
+.imgColumn>img{
+  width: 100%;
+    height: auto;
 }
 div#Projects img{
   min-width: 70%;
