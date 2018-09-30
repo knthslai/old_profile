@@ -22,6 +22,7 @@ export default class AboutMe extends Component {
               ><div className="imgColumn">
                   <img alt={ele.img[0]} src={require(`../imgs/${ele.img[0]}`)} /></div>
                 <div className="textColumn">
+                  <h1>{ele.header}</h1>
                   {
                     text.map((txt, idx) => {
                       if (txt.length) {

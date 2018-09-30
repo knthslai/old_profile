@@ -58,21 +58,21 @@ export default class NavBar extends Component {
 
         <div id="about-Me" className="nav-item" onClick={() => this.handleClick(`AboutMe`)}>
           <h2>About Me</h2>
-          <a> How I became a programmer. I found my passion through...</a>
+          <a style={{ backgroundColor: `transparent` }}> How I became a programmer. I found my passion through...</a>
         </div>
         <div id="projects" className="nav-item" onClick={() => this.handleClick(`Projects`)}>
           <h2>Projects</h2>
-          <a> Proud to say I worked on these projects!
+          <a style={{ backgroundColor: `transparent` }}> Proud to say I worked on these projects!
           </a>
         </div>
         <div id="background" className="nav-item" onClick={() => this.handleClick(`Background`)}>
           <h2>Background</h2>
-          <a> Working in NYC has taught me valuable and transferable skills!
+          <a style={{ backgroundColor: `transparent` }}> Working in NYC has taught me valuable and transferable skills!
           </a>
         </div>
         <div id="Posts" className="nav-item" onClick={() => this.handleClick(`Posts`)}>
           <h2>Posts</h2>
-          <a> The best way to learn is teach. Let's share the wealth!
+          <a style={{ backgroundColor: `transparent` }}> The best way to learn is teach. Let's share the wealth!
           </a>
         </div>
       </div>

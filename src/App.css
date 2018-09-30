@@ -1,3 +1,8 @@
+div.textColumn>h1{
+  text-align: center;
+  font-size: xx-large;
+  padding-bottom:25px;
+}
 div.backgroundSection{
   display: flex;
   justify-content: space-evenly;
@@ -123,6 +128,9 @@ margin-top:30px;
 .imgColumn{
   width: 100%;
     height: auto;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 .imgColumn>img{
   width: 100%;
@@ -231,11 +239,13 @@ transition: 0.3s;
   transform:scale(1.25);
   /* background-color: rgba(0, 0, 0, 0.30); */
 }
-div#MainView p{
+div#MainView p , a{
   transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 15px;
 }
 div#MainView p:hover{
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .nav-item *{
   text-align: center
@@ -507,5 +517,8 @@ div#bg-gifOverlay {
 }
 div.backgroundSection{
 display:block;
+}
+div.textColumn>h1{
+  padding-top:25px;
 }
 }
