@@ -446,9 +446,6 @@ div#SocialCards{
   align-self: center;
   flex-direction: column;
 }
-.card *{
-  /* position: absolute; */
-}
 .card img{
   z-index: 1;
   transition: 0.3s
@@ -469,7 +466,14 @@ transform:scale(1.25);
   align-self: center;
   font-size: xx-large;
 }
-
+.cardLine {
+  padding: 5%;
+  margin: 5%;
+  text-align: center;
+}
+#SocialCards :nth-child(3){
+  padding:5%;
+}
 @media (orientation:landscape){
   img#bg-gif{
     width:100%;
@@ -556,5 +560,11 @@ display:block;
 }
 div.textColumn>h1{
   padding-top:25px;
+}
+div#SocialCards{
+  display:flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
 }
 }

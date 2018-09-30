@@ -28,7 +28,7 @@ export default class Social extends Component {
                 <h2>E-mail: </h2> <a href="mailto:knthslai@gmail.com">Knthslai@gmail.com</a>
               </div>
               <div className="cardLine">
-                <h2>Résumé: </h2> <a href="https://github.com/knthslai/profile/blob/master/imgs/Kenneth-Lai-Resume.pdf">Click here for resume</a>
+                <h2>Résumé: </h2> <a href="https://github.com/knthslai/profile/blob/master/src/imgs/Kenneth-Lai-Resume.pdf" target="_blank" rel="noopener noreferrer">Click here for resume</a>
               </div>
             </div>
           </div>
