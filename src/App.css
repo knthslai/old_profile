@@ -162,7 +162,6 @@ div#console-window{
   0%   {opacity:1;}
   100% {opacity:0;overflow: hidden;}
 }
-
 div#console-header>*{
   color: white;
   display: flex;
@@ -224,29 +223,28 @@ div#nav-Bar{
   width: 100%;
   left:-4%;
   z-index: 3;
-  top:-165px;
+  top:-175px;
   height: 278px;
 }
 .nav-item{
   height: max-content;
 width: 15%;
-transition: 0.3s;
+/* transition: 0.3s; */
 }
-.nav-item *{
+/* .nav-item *{
   transition:0.3s;
 }
 .nav-item *:hover{
   transform:scale(1.25);
-  /* background-color: rgba(0, 0, 0, 0.30); */
-}
+} */
 div#MainView p , a{
-  transition: 0.3s;
+  /* transition: 0.3s; */
   background-color: rgba(0, 0, 0, 0.45);
   border-radius: 15px;
 }
-div#MainView p:hover{
+/* div#MainView p:hover{
   background-color: rgba(0, 0, 0, 0.6);
-}
+} */
 .nav-item *{
   text-align: center
 }
