@@ -6,7 +6,7 @@ export default class Social extends Component {
     return (
       <div className="subView">
         <div id="Social">
-          <ScrollAnimation animateIn='flipInY'
+          <ScrollAnimation animateIn='flipInX'
             animateOut='flipOutY'>
             <div className="sectionTitle"><a>Social</a></div>
           </ScrollAnimation>

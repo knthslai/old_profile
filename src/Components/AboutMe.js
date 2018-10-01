@@ -7,7 +7,7 @@ export default class AboutMe extends Component {
     return (
       <div className="subView">
         <div id="AboutMe">
-          <ScrollAnimation animateIn='flipInY'
+          <ScrollAnimation animateIn='flipInX'
             animateOnce={true}>
             <div className="sectionTitle"><a>About me </a></div>
           </ScrollAnimation>

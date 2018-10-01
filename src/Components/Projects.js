@@ -7,7 +7,7 @@ export default class Projects extends Component {
     return (
       <div className="subView">
         <div id="Projects">
-          <ScrollAnimation animateIn='flipInY'
+          <ScrollAnimation animateIn='flipInX'
             animateOnce={true}>
             <div className="sectionTitle"><a>Projects </a></div>
           </ScrollAnimation>

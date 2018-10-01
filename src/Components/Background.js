@@ -7,7 +7,7 @@ export default class Background extends Component {
     return (
       <div className="subView">
         <div id="Background">
-          <ScrollAnimation animateIn='flipInY'
+          <ScrollAnimation animateIn='flipInX'
             animateOnce={true}>
             <div className="sectionTitle"><a>Background</a></div>
           </ScrollAnimation>
