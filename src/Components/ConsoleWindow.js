@@ -91,7 +91,14 @@ class ConsoleWindow extends Component {
               }
             }
             let time = 0
-            const timeline = anime.timeline({ easing: `easeInOutCirc`, })
+            const timeline = anime.timeline({
+              easing: `easeInOutCirc`,
+              complete: () => {
+                document.querySelectorAll(`.nav-item *`).forEach(node => {
+                  node.style.transition = `0.3s`
+                })
+              }
+            })
             let startIdx = 0
             if (mobileView) {
               timeline.add({

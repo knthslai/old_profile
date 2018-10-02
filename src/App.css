@@ -233,10 +233,10 @@ width: 15%;
 }
 /* .nav-item *{
   transition:0.3s;
-}
+} */
 .nav-item *:hover{
   transform:scale(1.25);
-} */
+}
 div#MainView p , a{
   /* transition: 0.3s; */
   background-color: rgba(0, 0, 0, 0.45);
