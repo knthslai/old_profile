@@ -13,10 +13,23 @@ class ConsoleWindow extends Component {
     }
   }
   componentDidMount() {
+    const resize = this.resizePre()
     window.addEventListener(`resize`, () => {
-      this.props.resize()
-      this.preSubmitMessage(`Load nav-item:Top`)
+      resize()
     });
+  }
+  resizePre = () => {
+    let resizeBool = true
+    return () => {
+      if (resizeBool) {
+        this.props.resize()
+        this.preSubmitMessage(`Load nav-item:Top`)
+        resizeBool = false;
+        setTimeout(() => {
+          resizeBool = true
+        }, 2000)
+      }
+    }
   }
   addTypingEventListener = (submitMessage) => {
     document.addEventListener(`keydown`, evt => {

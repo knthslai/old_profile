@@ -405,17 +405,19 @@ div#typing-Intro{
   padding-left: 30%;
 }
 div#MainView >div:nth-child(n){
+  opacity: 1;
   display: flex;
   position: relative;
   left: 50%;
-  -webkit-transform: translateX(-50%);
+  /* -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
+  -ms-transform: translateX(-50%); */
   transform: translateX(-50%);
   width: 100%;
   align-content: center;
   flex-direction: column;
   min-height: 20%;
+  z-index: inherit;
 }
 div#typingContainer{
   display: flex;
