@@ -221,7 +221,7 @@ div#nav-Bar{
   position: absolute;
   width: 100%;
   left:-4%;
-  z-index: 5;
+  z-index: 6;
   top:-175px;
   height: 278px;
 }
@@ -230,9 +230,9 @@ div#nav-Bar{
 width: 15%;
 /* transition: 0.3s; */
 }
-/* .nav-item *{
-  transition:0.3s;
-} */
+.nav-item *{
+  width:15%;
+}
 .nav-item *:hover{
   transform:scale(1.25);
 }
@@ -245,10 +245,7 @@ div#MainView p , a{
   background-color: rgba(0, 0, 0, 0.6);
 } */
 .nav-item *{
-  text-align: center
-}
-.nav-item a{
-  display: block;
+  text-align: center;
 }
 img#bg-gif{
   width:auto;
@@ -356,6 +353,9 @@ div#info-Container{
 
 .nav-item a{
   color:white;
+}
+.nav-item *{
+  width: max-content;
 }
 
 .main-typing {
@@ -533,11 +533,11 @@ transform:scale(1.25);
     top:-3%;
     left: -65%;
     width: auto;
-    z-index: 3;
-    flex-direction: column;
-    z-index: 3;
     flex-direction: column;
     justify-content: flex-start;
+  }
+  .nav-item{
+    margin-top:8px;
   }
   .nav-item.slide0{
     padding-left:25px;
