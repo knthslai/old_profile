@@ -21,7 +21,6 @@ class App extends Component {
     this.setState({ mainLoad: true });
   }
   render() {
-    // console.log(`Mobile Mode: `, this.state.mobileView)
     return (
       <div className="App">
         <ConsoleWindow resize={this.resize} mobile={this.state.mobileView} newState={this.newState.bind(this)} />
